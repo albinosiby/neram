@@ -31,4 +31,16 @@ Deploy `dist/` to any static host. Render runs `node build.mjs` from `render.yam
 
 ## Kochi Metro station guide
 
-The Metro tab uses the uploaded `stations.csv`: 25 stations in sequence from Aluva to Tripunithura, station codes, coordinates and 13 main-station flags. `dist/metro-data.js` preserves every supplied field. Route selection works in either direction, counts intermediate stations, and provides an expandable station timeline, station search, main-station filter and coordinate-based map links. This file provides no train schedules or fares; the Metro interface does not fabricate either. Metro station data is served with the frontend and does not query Supabase. Use `#metro` to open this view directly.
+The Metro tab uses the uploaded `stations.csv`: 25 stations in sequence from Aluva to Tripunithura, station codes, coordinates and 13 main-station flags. `dist/metro-data.js` preserves every supplied field. Route selection works in either direction, counts intermediate stations, and provides an expandable station timeline, station search, main-station filter and coordinate-based map links. The initial CSV provides no schedules or fares; the later archived catalog extends it as documented below. Metro station data is served with the frontend and does not query Supabase. Use `#metro` to open this view directly.
+
+## Archived Metro timetable catalog
+
+The additional `kochi_metro_catalog.zip` supplies 446 detailed trips (10,652 calls), 450 trip metadata records, 625 fare-pair rules across six fare bands, two geographic route shapes and service calendars. Four metadata-only trips are omitted from departure results: WK_4, WK_12, WK_18 and WK_256.
+
+The published calendar is valid only from 2024-08-12 through 2025-12-31. Every timetable, trip detail and fare is labelled as archived; the app does not claim current availability, current pricing or live positions. Service-pattern selection is historical Monday–Saturday versus Sunday, not a prediction for today. Querying uses actual ordered calls, so short-turn trips are included only when they serve both selected stops in order. Board at the source departure time; alight at the destination arrival time. Times after 24:00 retain the following-day offset. Cards display hours/minutes; trip details preserve seconds.
+
+`dist/data/metro-catalog.5408afb0a9afd9cd.json` is an exact compact representation of the source calls, calendar, fare rules and shape points. Station indices reference `stationCodes`; times are seconds from the service-day start. Trip arrays contain [trip_id, service_id, direction_id, shape_id, calls]; calls contain [station_index, arrival_seconds, departure_seconds, source_distance]. Shape points preserve [latitude, longitude, source_distance]. Distances are preserved without assuming their units. The original upload remains the source of truth.
+
+The 300 KB catalog is fetched once, only when Metro opens, through the versioned manifest. Timetable filtering then runs locally; bus-only visits do not download it. Source Malayalam station names and wheelchair flags supplement the original station directory. The map draws uploaded geometry and station coordinates, highlights the selected segment and has no external tile dependency or live train markers.
+
+Run `node scripts/verify-metro-catalog.mjs` for fare, trip-order, service-pattern, short-turn, overnight and calendar validity checks.

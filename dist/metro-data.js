@@ -1,4 +1,4 @@
-// Source: uploaded stations.csv. Order and field meanings are preserved.
+// Source: kochi_metro_catalog.zip/stops.json.
 window.NERAM_METRO_STATIONS = [
   {
     "sequence": 1,
@@ -6,7 +6,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Aluva",
     "latitude": 10.1099,
     "longitude": 76.3495,
-    "main_station_flag": true
+    "main_station_flag": true,
+    "names": {
+      "ml": "ആലുവ",
+      "hi": "आलुवा"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 2,
@@ -14,7 +19,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Pulinchodu",
     "latitude": 10.0951,
     "longitude": 76.3466,
-    "main_station_flag": true
+    "main_station_flag": true,
+    "names": {
+      "ml": "പുളിഞ്ചോട്",
+      "hi": "पुलिनचोडु"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 3,
@@ -22,7 +32,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Companypady",
     "latitude": 10.0873,
     "longitude": 76.3428,
-    "main_station_flag": true
+    "main_station_flag": true,
+    "names": {
+      "ml": "കമ്പനിപ്പടി",
+      "hi": "कंपनीपडी"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 4,
@@ -30,7 +45,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Ambattukavu",
     "latitude": 10.0793,
     "longitude": 76.3389,
-    "main_station_flag": false
+    "main_station_flag": false,
+    "names": {
+      "ml": "അമ്പാട്ടുകാവ്",
+      "hi": "अम्बाटुकाव्"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 5,
@@ -38,7 +58,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Muttom",
     "latitude": 10.0727,
     "longitude": 76.3336,
-    "main_station_flag": false
+    "main_station_flag": false,
+    "names": {
+      "ml": "മുട്ടം",
+      "hi": "मुट्टम"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 6,
@@ -46,7 +71,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Kalamassery",
     "latitude": 10.0586,
     "longitude": 76.322,
-    "main_station_flag": true
+    "main_station_flag": true,
+    "names": {
+      "ml": "കളമശ്ശേരി",
+      "hi": "कलमशेरी"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 7,
@@ -54,7 +84,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Cochin University",
     "latitude": 10.0467,
     "longitude": 76.3182,
-    "main_station_flag": false
+    "main_station_flag": false,
+    "names": {
+      "ml": "കൊച്ചിൻ യൂണിവേഴ്സിറ്റി",
+      "hi": "कोच्चिन यूनिवर्सिटी"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 8,
@@ -62,7 +97,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Pathadipalam",
     "latitude": 10.0361,
     "longitude": 76.3144,
-    "main_station_flag": true
+    "main_station_flag": true,
+    "names": {
+      "ml": "പത്തടിപ്പോലം",
+      "hi": "पत्तडिप्पालम"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 9,
@@ -70,7 +110,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Edapally",
     "latitude": 10.0251,
     "longitude": 76.3083,
-    "main_station_flag": true
+    "main_station_flag": true,
+    "names": {
+      "ml": "ഇടപ്പള്ളി",
+      "hi": "इडप्पल्ली"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 10,
@@ -78,7 +123,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Changampuzha Park",
     "latitude": 10.0152,
     "longitude": 76.3023,
-    "main_station_flag": false
+    "main_station_flag": false,
+    "names": {
+      "ml": "ചങ്ങമ്പുഴ പാർക്ക്",
+      "hi": "चंगमपुष़ा पार्क"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 11,
@@ -86,7 +136,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Palarivattom",
     "latitude": 10.0064,
     "longitude": 76.3048,
-    "main_station_flag": true
+    "main_station_flag": true,
+    "names": {
+      "ml": "പാലാരിവട്ടം",
+      "hi": "पालारिवट्टम"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 12,
@@ -94,7 +149,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "JLN Stadium",
     "latitude": 10.0002,
     "longitude": 76.2989,
-    "main_station_flag": false
+    "main_station_flag": false,
+    "names": {
+      "ml": "ജെ എൽ എൻ സ്റ്റേഡിയം",
+      "hi": "जे.एल.एन स्टेडियम"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 13,
@@ -102,7 +162,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Kaloor",
     "latitude": 9.9943,
     "longitude": 76.2914,
-    "main_station_flag": true
+    "main_station_flag": true,
+    "names": {
+      "ml": "കലൂർ",
+      "hi": "कलूर"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 14,
@@ -110,7 +175,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Town Hall",
     "latitude": 9.9913775,
     "longitude": 76.2883601,
-    "main_station_flag": false
+    "main_station_flag": false,
+    "names": {
+      "ml": "ടൗൺ ഹാൾ",
+      "hi": "टाउन हॉल"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 15,
@@ -118,7 +188,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "MG Road",
     "latitude": 9.9834,
     "longitude": 76.2823,
-    "main_station_flag": true
+    "main_station_flag": true,
+    "names": {
+      "ml": "എം.ജി റോഡ്",
+      "hi": "एम जी रोड"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 16,
@@ -126,7 +201,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Maharajas College",
     "latitude": 9.9732,
     "longitude": 76.2851,
-    "main_station_flag": false
+    "main_station_flag": false,
+    "names": {
+      "ml": "മഹാരാജാസ് കോളേജ്",
+      "hi": "महाराजास् कॉलज"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 17,
@@ -134,7 +214,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Ernakulam South",
     "latitude": 9.9686042,
     "longitude": 76.2895744,
-    "main_station_flag": true
+    "main_station_flag": true,
+    "names": {
+      "ml": "എറണാകുളം സൗത്ത്",
+      "hi": "एर्नाकुलम साउथ"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 18,
@@ -142,7 +227,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Kadavanthra",
     "latitude": 9.9665809,
     "longitude": 76.2981877,
-    "main_station_flag": false
+    "main_station_flag": false,
+    "names": {
+      "ml": "കടവന്ത്ര",
+      "hi": "कडवान्त्र"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 19,
@@ -150,7 +240,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Elamkulam",
     "latitude": 9.9671248,
     "longitude": 76.3084899,
-    "main_station_flag": false
+    "main_station_flag": false,
+    "names": {
+      "ml": "ഇളങ്കുളം",
+      "hi": "एलमकुलम"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 20,
@@ -158,7 +253,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Vyttila",
     "latitude": 9.9675457,
     "longitude": 76.3203664,
-    "main_station_flag": true
+    "main_station_flag": true,
+    "names": {
+      "ml": "വൈറ്റില",
+      "hi": "व्यत्तिला"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 21,
@@ -166,7 +266,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Thykoodam",
     "latitude": 9.9600311,
     "longitude": 76.3236762,
-    "main_station_flag": false
+    "main_station_flag": false,
+    "names": {
+      "ml": "തൈക്കൂടം",
+      "hi": "थाईकूडम"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 22,
@@ -174,7 +279,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Pettah",
     "latitude": 9.9524842,
     "longitude": 76.3302101,
-    "main_station_flag": true
+    "main_station_flag": true,
+    "names": {
+      "ml": "പേട്ട",
+      "hi": "पेट्टा"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 23,
@@ -182,7 +292,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Vadakkekotta",
     "latitude": 9.952838,
     "longitude": 76.3394827,
-    "main_station_flag": false
+    "main_station_flag": false,
+    "names": {
+      "ml": "വടക്കേക്കോട്ട",
+      "hi": "वडक्केकोटा"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 24,
@@ -190,7 +305,12 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "SN Junction",
     "latitude": 9.9547532,
     "longitude": 76.3458505,
-    "main_station_flag": false
+    "main_station_flag": false,
+    "names": {
+      "ml": "എസ്. എൻ. ജംഗ്ഷൻ",
+      "hi": "एस.एन. जंक्शन"
+    },
+    "wheelchair_boarding": 1
   },
   {
     "sequence": 25,
@@ -198,6 +318,11 @@ window.NERAM_METRO_STATIONS = [
     "station_name": "Tripunithura",
     "latitude": 9.95078,
     "longitude": 76.35183,
-    "main_station_flag": true
+    "main_station_flag": true,
+    "names": {
+      "ml": "തൃപ്പൂണിത്തുറ",
+      "hi": "त्रिपुनिथुरा"
+    },
+    "wheelchair_boarding": 1
   }
 ];

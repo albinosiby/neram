@@ -1,6 +1,22 @@
 'use strict';
 window.NeramPrefs = (() => {
  const words = {
+ 'KOCHI METRO · TIMETABLE & STATIONS':'കൊച്ചി മെട്രോ · സമയപ്പട്ടികയും സ്റ്റേഷനുകളും','View departures':'പുറപ്പെടൽ സമയങ്ങൾ കാണൂ',
+ 'Archived timetable — not current service information':'പഴയ സമയപ്പട്ടിക — നിലവിലെ സർവീസ് വിവരമല്ല',
+ 'The supplied calendar ended on 31 December 2025. Times and fares below are from that catalog and may have changed. No live train tracking.':'നൽകിയ സർവീസ് കലണ്ടർ 2025 ഡിസംബർ 31-ന് അവസാനിച്ചു. താഴെയുള്ള സമയങ്ങളും നിരക്കുകളും പഴയ കാറ്റലോഗിൽനിന്നുള്ളതാണ്; അവ മാറിയിരിക്കാം. ലൈവ് ട്രാക്കിങ് ലഭ്യമല്ല.',
+ 'PUBLISHED TIMETABLE':'പ്രസിദ്ധീകരിച്ച സമയപ്പട്ടിക','Archived departures':'പഴയ പുറപ്പെടൽ സമയങ്ങൾ','Archive':'പഴയ രേഖ',
+ 'Published service pattern':'പ്രസിദ്ധീകരിച്ച സർവീസ് രീതി','Monday–Saturday (archived)':'തിങ്കൾ–ശനി (പഴയത്)','Sunday (archived)':'ഞായർ (പഴയത്)',
+ 'Depart after (optional)':'ഈ സമയത്തിന് ശേഷം (ഐച്ഛികം)','Catalog fare':'കാറ്റലോഗിലെ നിരക്ക്','Published fare only. Confirm the current fare before travel.':'പ്രസിദ്ധീകരിച്ച പഴയ നിരക്കാണ്. യാത്രയ്ക്ക് മുമ്പ് നിലവിലെ നിരക്ക് സ്ഥിരീകരിക്കുക.',
+ 'Published service period: 12 August 2024 – 31 December 2025.':'പ്രസിദ്ധീകരിച്ച സർവീസ് കാലയളവ്: 2024 ഓഗസ്റ്റ് 12 – 2025 ഡിസംബർ 31.',
+ 'Loading the archived timetable…':'പഴയ സമയപ്പട്ടിക തുറക്കുന്നു…','Could not load the archived timetable. Please try again.':'പഴയ സമയപ്പട്ടിക തുറക്കാനായില്ല. വീണ്ടും ശ്രമിക്കുക.',
+ 'No published calendar is available for this pattern.':'ഈ സർവീസ് രീതിക്ക് കലണ്ടർ ലഭ്യമല്ല.','Not available':'ലഭ്യമല്ല','{n} published departures':'പ്രസിദ്ധീകരിച്ച {n} പുറപ്പെടലുകൾ',
+ 'No archived trips match these stations and time.':'ഈ സ്റ്റേഷനുകൾക്കും സമയത്തിനും യോജിക്കുന്ന പഴയ ട്രിപ്പുകൾ ലഭ്യമല്ല.','View stop times':'സ്റ്റോപ്പ് സമയങ്ങൾ കാണൂ','Catalog trip':'കാറ്റലോഗ് ട്രിപ്പ്',
+ 'Show more departures ({n} remaining)':'കൂടുതൽ പുറപ്പെടലുകൾ കാണൂ ({n} ബാക്കി)','View route map':'റൂട്ട് മാപ്പ് കാണൂ',
+ 'Route geometry and station locations from the catalog. No live train positions.':'കാറ്റലോഗിലെ റൂട്ടിന്റെ രൂപവും സ്റ്റേഷൻ സ്ഥാനങ്ങളും. ലൈവ് ട്രെയിൻ സ്ഥാനങ്ങൾ ലഭ്യമല്ല.',
+ 'Catalog route geometry with selected stations':'തിരഞ്ഞെടുത്ത സ്റ്റേഷനുകൾ ഉൾപ്പെട്ട കാറ്റലോഗ് റൂട്ട് മാപ്പ്','Archived trip':'പഴയ ട്രിപ്പ്',
+ 'This trip belongs to the expired catalog. It is not confirmation of a train running today.':'കാലാവധി കഴിഞ്ഞ കാറ്റലോഗിലെ ട്രിപ്പാണിത്. ഇന്ന് ട്രെയിൻ ഓടുന്നതിന്റെ സ്ഥിരീകരണമല്ല.',
+ 'Departure':'പുറപ്പെടൽ','Arrival':'എത്തിച്ചേരൽ','Arrival / departure':'എത്തിച്ചേരൽ / പുറപ്പെടൽ','Day +{n}':'ദിവസം +{n}','{n} sec':'{n} സെക്കൻഡ്',
+ 'Station order and locations are from the uploaded catalog.':'സ്റ്റേഷനുകളുടെ ക്രമവും സ്ഥാനങ്ങളും നൽകിയ കാറ്റലോഗിൽനിന്നാണ്.','Wheelchair boarding':'വീൽചെയർ പ്രവേശനം','Available in catalog':'കാറ്റലോഗിൽ ലഭ്യമാണ്','Not available in catalog':'കാറ്റലോഗിൽ ലഭ്യമല്ല','Not specified':'വ്യക്തമാക്കിയിട്ടില്ല','Close Metro trip':'മെട്രോ ട്രിപ്പ് അടയ്ക്കുക',
  'Buses':'ബസുകൾ','Kochi Metro':'കൊച്ചി മെട്രോ','KOCHI METRO':'കൊച്ചി മെട്രോ','KOCHI METRO · STATION GUIDE':'കൊച്ചി മെട്രോ · സ്റ്റേഷൻ ഗൈഡ്',
  'A simpler way across Kochi.':'കൊച്ചിയിലൂടെ എളുപ്പമൊരു യാത്ര.','Pick your stations. See every stop along the way.':'സ്റ്റേഷനുകൾ തിരഞ്ഞെടുക്കൂ. വഴിയിലുള്ള എല്ലാ സ്റ്റോപ്പുകളും കാണൂ.',
  'Stations':'സ്റ്റേഷനുകൾ','Corridor in your station data':'നൽകിയ സ്റ്റേഷൻ പട്ടികയിലെ റൂട്ട്','View Metro Route':'മെട്രോ റൂട്ട് കാണൂ','YOUR METRO JOURNEY':'നിങ്ങളുടെ മെട്രോ യാത്ര',
