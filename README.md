@@ -28,3 +28,7 @@ Operator classification is derived from the service name (KSRTC matching names v
 ## Hosting
 
 Deploy `dist/` to any static host. Render runs `node build.mjs` from `render.yaml` before publishing. Generated bundles are also committed so the existing static publish command can serve them immediately. `.openai/hosting.json` configures the associated Sites deployment. Access for the initial Sites deployment is owner-private.
+
+## Kochi Metro station guide
+
+The Metro tab uses the uploaded `stations.csv`: 25 stations in sequence from Aluva to Tripunithura, station codes, coordinates and 13 main-station flags. `dist/metro-data.js` preserves every supplied field. Route selection works in either direction, counts intermediate stations, and provides an expandable station timeline, station search, main-station filter and coordinate-based map links. This file provides no train schedules or fares; the Metro interface does not fabricate either. Metro station data is served with the frontend and does not query Supabase. Use `#metro` to open this view directly.

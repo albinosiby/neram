@@ -1,6 +1,19 @@
 'use strict';
 window.NeramPrefs = (() => {
  const words = {
+ 'Buses':'ബസുകൾ','Kochi Metro':'കൊച്ചി മെട്രോ','KOCHI METRO':'കൊച്ചി മെട്രോ','KOCHI METRO · STATION GUIDE':'കൊച്ചി മെട്രോ · സ്റ്റേഷൻ ഗൈഡ്',
+ 'A simpler way across Kochi.':'കൊച്ചിയിലൂടെ എളുപ്പമൊരു യാത്ര.','Pick your stations. See every stop along the way.':'സ്റ്റേഷനുകൾ തിരഞ്ഞെടുക്കൂ. വഴിയിലുള്ള എല്ലാ സ്റ്റോപ്പുകളും കാണൂ.',
+ 'Stations':'സ്റ്റേഷനുകൾ','Corridor in your station data':'നൽകിയ സ്റ്റേഷൻ പട്ടികയിലെ റൂട്ട്','View Metro Route':'മെട്രോ റൂട്ട് കാണൂ','YOUR METRO JOURNEY':'നിങ്ങളുടെ മെട്രോ യാത്ര',
+ 'Station route':'സ്റ്റേഷൻ റൂട്ട്','Direction':'ദിശ','Stations on route':'റൂട്ടിലെ സ്റ്റേഷനുകൾ','In between':'ഇടയിലുള്ളവ',
+ 'Station order is from your uploaded file. Train timings and fares are not included.':'സ്റ്റേഷനുകളുടെ ക്രമം നൽകിയ ഫയലിൽനിന്നാണ്. ട്രെയിൻ സമയങ്ങളും നിരക്കുകളും ഉൾപ്പെടുത്തിയിട്ടില്ല.',
+ 'Explore all 25 stations':'25 സ്റ്റേഷനുകളും കാണൂ','Search stations':'സ്റ്റേഷനുകൾ തിരയൂ','Search station name or code':'സ്റ്റേഷൻ പേരോ കോഡോ തിരയൂ',
+ 'Main stations only':'പ്രധാന സ്റ്റേഷനുകൾ മാത്രം','Main station labels follow the flag in your uploaded file.':'പ്രധാന സ്റ്റേഷൻ ലേബൽ നൽകിയ ഫയലിലെ അടയാളം അനുസരിച്ചാണ്.',
+ 'Choose two different Metro stations.':'വ്യത്യസ്തമായ രണ്ട് മെട്രോ സ്റ്റേഷനുകൾ തിരഞ്ഞെടുക്കൂ.','Towards {station}':'{station} ഭാഗത്തേക്ക്',
+ '{n} more stations':'കൂടുതൽ {n} സ്റ്റേഷനുകൾ','Show fewer stations':'കുറച്ച് സ്റ്റേഷനുകൾ കാണിക്കുക','Show all {n} stations':'{n} സ്റ്റേഷനുകളും കാണൂ',
+ '{n} stations':'{n} സ്റ്റേഷനുകൾ','No matching Metro stations.':'മെട്രോ സ്റ്റേഷൻ കണ്ടെത്തിയില്ല.','Main':'പ്രധാന',
+ 'Station code':'സ്റ്റേഷൻ കോഡ്','Route position':'റൂട്ടിലെ സ്ഥാനം','Main station':'പ്രധാന സ്റ്റേഷൻ','Yes':'അതെ','No':'അല്ല','Latitude':'അക്ഷാംശം','Longitude':'രേഖാംശം',
+ 'Open station on map':'സ്റ്റേഷൻ മാപ്പിൽ കാണൂ','Coordinates and station labels are from your uploaded station file.':'നൽകിയ സ്റ്റേഷൻ ഫയലിൽനിന്നുള്ള സ്ഥാനവിവരങ്ങളും ലേബലുകളും.',
+ 'Close station details':'സ്റ്റേഷൻ വിവരങ്ങൾ അടയ്ക്കുക',
  'Where are you heading?':'എവിടേക്കാണ് യാത്ര?', 'YOUR EVERYDAY JOURNEY, SIMPLIFIED':'നിങ്ങളുടെ യാത്ര ഇനി എളുപ്പത്തിൽ',
  'Your next bus is a search away.':'നിങ്ങളുടെ അടുത്ത ബസ് കണ്ടെത്തൂ.', 'From':'പുറപ്പെടുന്ന സ്ഥലം', 'To':'എത്തേണ്ട സ്ഥലം',
  'Select Departure Stop':'പുറപ്പെടുന്ന സ്റ്റോപ്പ് തിരഞ്ഞെടുക്കൂ', 'Select Destination Stop':'എത്തേണ്ട സ്റ്റോപ്പ് തിരഞ്ഞെടുക്കൂ',
