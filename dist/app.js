@@ -95,7 +95,7 @@ let activeJourney=null;
 const journeys=new Map();
 function busHeader(row,full=false){
  const header=document.createElement('div');header.className='journey-bus-header';
- const image=document.createElement('img');image.src='/assets/bus.svg';image.alt='';
+ const image=document.createElement('img');image.src='/assets/bus.svg';image.alt='';image.width=60;image.height=60;
  const content=document.createElement('div');content.className='bus-content';
  const top=document.createElement('div');top.className='bus-top';top.append(textNode('span',row.name||t('Bus service'),'bus-name'),textNode('span',t(row.operator),`operator-tag ${row.operator==='Private'?'private':''}`));content.append(top);
  const route=document.createElement('div');route.className='bus-route';route.innerHTML='<span class="green-dot"></span>';route.append(textNode('span',`${pretty(row.origin)} → ${pretty(row.destination)}`,'route-text'));content.append(route);

@@ -14,7 +14,7 @@ A responsive bus timetable search app based on the supplied Neram mobile UI. Bui
 
 ## Run
 
-Serve `dist/` using any static web server. For example, `python3 -m http.server 8080 --directory dist`.
+Run `node build.mjs` after changing the source files, then serve `dist/` using any static web server. The build combines all styles and scripts into files named with content hashes, so cached files from an older release cannot partially style the new screens. For example, `python3 -m http.server 8080 --directory dist`.
 
 ## Database
 
@@ -27,4 +27,4 @@ Operator classification is derived from the service name (KSRTC matching names v
 
 ## Hosting
 
-Deploy `dist/` to any static host. `.openai/hosting.json` configures the associated Sites deployment. Access for the initial Sites deployment is owner-private.
+Deploy `dist/` to any static host. Render runs `node build.mjs` from `render.yaml` before publishing. Generated bundles are also committed so the existing static publish command can serve them immediately. `.openai/hosting.json` configures the associated Sites deployment. Access for the initial Sites deployment is owner-private.

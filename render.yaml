@@ -7,7 +7,7 @@ services:
     repo: https://github.com/albinosiby/neram
     branch: main
     autoDeployTrigger: commit
-    buildCommand: test -f dist/index.html
+    buildCommand: node build.mjs
     staticPublishPath: ./dist
     routes:
       - type: rewrite
