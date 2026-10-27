@@ -3,21 +3,22 @@
  const stations=window.NERAM_METRO_STATIONS;
  const byId=new Map(stations.map(s=>[s.stop_id,s]));
  const stationName=s=>window.NeramPrefs.language==='ml'?(s.names?.ml||s.station_name):s.station_name;
- let route=[],expanded=false,mode=location.hash.startsWith('#metro')?'metro':'bus',detailId=null;
+ let route=[],expanded=false,mode=location.hash==='#trains'?'trains':location.hash.startsWith('#metro')?'metro':'bus',detailId=null;
  for(const selector of ['#metro-from','#metro-to']){
   for(const station of stations){const option=document.createElement('option');option.value=station.stop_id;option.textContent=station.station_name;$(selector).append(option);}
  }
  $('#metro-from').value=stations[0].stop_id;$('#metro-to').value=stations.at(-1).stop_id;
  function setMode(next,updateUrl=true){
-  mode=next;$('#bus-view').hidden=next!=='bus';$('#metro-view').hidden=next!=='metro';
+  mode=next;$('#rail-view').hidden=next!=='trains';$('#mode-trains').setAttribute('aria-pressed',String(next==='trains'));$('#bus-view').hidden=next!=='bus';$('#metro-view').hidden=next!=='metro';
   $('#mode-bus').setAttribute('aria-pressed',String(next==='bus'));$('#mode-metro').setAttribute('aria-pressed',String(next==='metro'));
-  $('#footer-timetable-note').hidden=next==='metro';
+  $('#footer-timetable-note').hidden=next!=='bus';
   window.dispatchEvent(new CustomEvent('neram:metro-mode',{detail:next==='metro'&&location.hash==='#metro-bengaluru'?'bengaluru':next}));
-  if(updateUrl)history.replaceState(null,'',location.pathname+location.search+(next==='metro'?($('#metro-city').value==='bengaluru'?'#metro-bengaluru':'#metro'):''));
+  if(updateUrl)history.replaceState(null,'',location.pathname+location.search+(next==='metro'?($('#metro-city').value==='bengaluru'?'#metro-bengaluru':'#metro'):next==='trains'?'#trains':''));
  }
+ $('#mode-trains').addEventListener('click',()=>setMode('trains'));
  $('#mode-bus').addEventListener('click',()=>setMode('bus'));
  $('#mode-metro').addEventListener('click',()=>setMode('metro'));
- window.addEventListener('hashchange',()=>setMode(location.hash.startsWith('#metro')?'metro':'bus',false));
+ window.addEventListener('hashchange',()=>setMode(location.hash==='#trains'?'trains':location.hash.startsWith('#metro')?'metro':'bus',false));
  function selectRoute(){
   const from=byId.get($('#metro-from').value),to=byId.get($('#metro-to').value);
   if(!from||!to||from.stop_id===to.stop_id){$('#metro-error').hidden=false;$('#metro-error').textContent=t('Choose two different Metro stations.');$('#metro-route-result').hidden=true;window.dispatchEvent(new CustomEvent('neram:metro-route',{detail:null}));return false;}
@@ -74,6 +75,6 @@
  }
  function openStation(id){detailId=id;renderStation();$('#metro-station-dialog').showModal();}
  window.addEventListener('neram:metro-station',e=>{if(byId.has(e.detail))openStation(e.detail);});
- window.addEventListener('neram:preferences',()=>{for(const id of ['#metro-from','#metro-to']){for(const option of $(id).options)option.textContent=stationName(byId.get(option.value));}renderRoute();renderCatalogue();renderStation();$('#footer-timetable-note').hidden=mode==='metro';if(!$('#metro-error').hidden)$('#metro-error').textContent=t('Choose two different Metro stations.');});
+ window.addEventListener('neram:preferences',()=>{for(const id of ['#metro-from','#metro-to']){for(const option of $(id).options)option.textContent=stationName(byId.get(option.value));}renderRoute();renderCatalogue();renderStation();$('#footer-timetable-note').hidden=mode!=='bus';if(!$('#metro-error').hidden)$('#metro-error').textContent=t('Choose two different Metro stations.');});
  selectRoute();renderCatalogue();setMode(mode,false);
 })();

@@ -17,7 +17,7 @@ window.NeramPrefs = (() => {
  'This trip belongs to the expired catalog. It is not confirmation of a train running today.':'കാലാവധി കഴിഞ്ഞ കാറ്റലോഗിലെ ട്രിപ്പാണിത്. ഇന്ന് ട്രെയിൻ ഓടുന്നതിന്റെ സ്ഥിരീകരണമല്ല.',
  'Departure':'പുറപ്പെടൽ','Arrival':'എത്തിച്ചേരൽ','Arrival / departure':'എത്തിച്ചേരൽ / പുറപ്പെടൽ','Day +{n}':'ദിവസം +{n}','{n} sec':'{n} സെക്കൻഡ്',
  'Station order and locations are from the uploaded catalog.':'സ്റ്റേഷനുകളുടെ ക്രമവും സ്ഥാനങ്ങളും നൽകിയ കാറ്റലോഗിൽനിന്നാണ്.','Wheelchair boarding':'വീൽചെയർ പ്രവേശനം','Available in catalog':'കാറ്റലോഗിൽ ലഭ്യമാണ്','Not available in catalog':'കാറ്റലോഗിൽ ലഭ്യമല്ല','Not specified':'വ്യക്തമാക്കിയിട്ടില്ല','Close Metro trip':'മെട്രോ ട്രിപ്പ് അടയ്ക്കുക',
- 'Buses':'ബസുകൾ','Metro':'മെട്രോ','Kochi Metro':'കൊച്ചി മെട്രോ','KOCHI METRO':'കൊച്ചി മെട്രോ','KOCHI METRO · STATION GUIDE':'കൊച്ചി മെട്രോ · സ്റ്റേഷൻ ഗൈഡ്',
+ 'Trains':'ട്രെയിനുകൾ','Buses':'ബസുകൾ','Metro':'മെട്രോ','Kochi Metro':'കൊച്ചി മെട്രോ','KOCHI METRO':'കൊച്ചി മെട്രോ','KOCHI METRO · STATION GUIDE':'കൊച്ചി മെട്രോ · സ്റ്റേഷൻ ഗൈഡ്',
  'A simpler way across Kochi.':'കൊച്ചിയിലൂടെ എളുപ്പമൊരു യാത്ര.','Pick your stations. See every stop along the way.':'സ്റ്റേഷനുകൾ തിരഞ്ഞെടുക്കൂ. വഴിയിലുള്ള എല്ലാ സ്റ്റോപ്പുകളും കാണൂ.',
  'Stations':'സ്റ്റേഷനുകൾ','Corridor in your station data':'നൽകിയ സ്റ്റേഷൻ പട്ടികയിലെ റൂട്ട്','View Metro Route':'മെട്രോ റൂട്ട് കാണൂ','YOUR METRO JOURNEY':'നിങ്ങളുടെ മെട്രോ യാത്ര',
  'Station route':'സ്റ്റേഷൻ റൂട്ട്','Direction':'ദിശ','Stations on route':'റൂട്ടിലെ സ്റ്റേഷനുകൾ','In between':'ഇടയിലുള്ളവ',
