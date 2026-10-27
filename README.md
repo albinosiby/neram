@@ -44,3 +44,9 @@ The published calendar is valid only from 2024-08-12 through 2025-12-31. Every t
 The 300 KB catalog is fetched once, only when Metro opens, through the versioned manifest. Timetable filtering then runs locally; bus-only visits do not download it. Source Malayalam station names and wheelchair flags supplement the original station directory. The map draws uploaded geometry and station coordinates, highlights the selected segment and has no external tile dependency or live train markers.
 
 Run `node scripts/verify-metro-catalog.mjs` for fare, trip-order, service-pattern, short-turn, overnight and calendar validity checks.
+
+## Bengaluru / Namma Metro
+
+Open `/#metro-bengaluru` or choose Bengaluru in the Metro city selector. The uploaded `bengaluru_metro_ixigo_catalog.json` (retrieved 27 October 2026) supplies Purple, Green and Yellow line station orders: 85 line entries, 83 unique stations and two interchanges. Data is retained in `dist/bengaluru-data.js`. A line-aware route graph minimizes transfers then adjacent station intervals, with directions, ordered stations, station search, line distances and approximate Monday–Saturday/Sunday operating hours. The shared RV Road station uses its identical station-list name; the source interchange description also has the alias “(RV Road)”.
+
+This third-party catalog has no fare matrix, geographic coordinates, train-level departures or journey durations. UI labels service summaries as approximate and supplies no invented fares, ETAs or map coordinates. Bengaluru content is English; the existing bus/Kochi language preferences continue to work. No Supabase data is changed. Run `node scripts/verify-bengaluru.mjs` to verify route and interchange behavior.

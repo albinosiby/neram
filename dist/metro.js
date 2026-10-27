@@ -3,7 +3,7 @@
  const stations=window.NERAM_METRO_STATIONS;
  const byId=new Map(stations.map(s=>[s.stop_id,s]));
  const stationName=s=>window.NeramPrefs.language==='ml'?(s.names?.ml||s.station_name):s.station_name;
- let route=[],expanded=false,mode=location.hash==='#metro'?'metro':'bus',detailId=null;
+ let route=[],expanded=false,mode=location.hash.startsWith('#metro')?'metro':'bus',detailId=null;
  for(const selector of ['#metro-from','#metro-to']){
   for(const station of stations){const option=document.createElement('option');option.value=station.stop_id;option.textContent=station.station_name;$(selector).append(option);}
  }
@@ -12,12 +12,12 @@
   mode=next;$('#bus-view').hidden=next!=='bus';$('#metro-view').hidden=next!=='metro';
   $('#mode-bus').setAttribute('aria-pressed',String(next==='bus'));$('#mode-metro').setAttribute('aria-pressed',String(next==='metro'));
   $('#footer-timetable-note').hidden=next==='metro';
-  window.dispatchEvent(new CustomEvent('neram:metro-mode',{detail:next}));
-  if(updateUrl)history.replaceState(null,'',location.pathname+location.search+(next==='metro'?'#metro':''));
+  window.dispatchEvent(new CustomEvent('neram:metro-mode',{detail:next==='metro'&&location.hash==='#metro-bengaluru'?'bengaluru':next}));
+  if(updateUrl)history.replaceState(null,'',location.pathname+location.search+(next==='metro'?($('#metro-city').value==='bengaluru'?'#metro-bengaluru':'#metro'):''));
  }
  $('#mode-bus').addEventListener('click',()=>setMode('bus'));
  $('#mode-metro').addEventListener('click',()=>setMode('metro'));
- window.addEventListener('hashchange',()=>setMode(location.hash==='#metro'?'metro':'bus',false));
+ window.addEventListener('hashchange',()=>setMode(location.hash.startsWith('#metro')?'metro':'bus',false));
  function selectRoute(){
   const from=byId.get($('#metro-from').value),to=byId.get($('#metro-to').value);
   if(!from||!to||from.stop_id===to.stop_id){$('#metro-error').hidden=false;$('#metro-error').textContent=t('Choose two different Metro stations.');$('#metro-route-result').hidden=true;window.dispatchEvent(new CustomEvent('neram:metro-route',{detail:null}));return false;}

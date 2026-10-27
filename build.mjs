@@ -4,8 +4,8 @@ import {createHash} from 'node:crypto';
 // Ship one matching stylesheet and script instead of mixing cached releases.
 const root=new URL('./dist/',import.meta.url);
 const read=name=>readFile(new URL(name,root),'utf8');
-const css=(await Promise.all(['styles.css','views.css','metro.css','metro-schedule.css'].map(read))).join('\n');
-const js=(await Promise.all(['config.js','preferences.js','app.js','metro-data.js','metro-catalog-manifest.js','metro-schedule-core.js','metro.js','metro-schedule.js'].map(read))).join('\n;\n');
+const css=(await Promise.all(['styles.css','views.css','metro.css','metro-schedule.css','bengaluru.css'].map(read))).join('\n');
+const js=(await Promise.all(['config.js','preferences.js','app.js','metro-data.js','metro-catalog-manifest.js','metro-schedule-core.js','metro.js','metro-schedule.js','bengaluru-data.js','bengaluru-core.js','bengaluru.js'].map(read))).join('\n;\n');
 const fingerprint=content=>createHash('sha256').update(content).digest('hex').slice(0,16);
 const cssName=`neram.${fingerprint(css)}.css`,jsName=`neram.${fingerprint(js)}.js`;
 let html=await read('index.html');
