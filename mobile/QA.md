@@ -1,16 +1,31 @@
 # Mobile QA — 29 October 2026
 
-Observed in GitHub Actions run 40823049878 for commit 65d11d11aeac11b3524cc1e1a12c4856b81f088d:
+Verified code commit: `7b1c959c71bceb47a6e0d33dbbf7eac70630cdd8`.
+GitHub Actions: https://github.com/albinosiby/neram/actions/runs/40823595674
 
-- Flutter 3.47.8 dependency resolution and static analysis passed.
-- All 9 unit/widget tests passed: time/day offsets, exact Kochi archive sample and fares, Bengaluru transfers, separate API targets and pagination parameters, response error handling, leading-zero train numbers, report payload fields, phone navigation/search-to-route and a 320-pixel layout with larger text.
-- Both live public API smoke scripts passed separately: buses (188 Aluva→Ernakulam matches, ordered route and overnight handling) and railway (45 Kannur→Thalassery matches, paging, time filter and raw-data denial).
-- The first APK attempt stopped at Gradle validation because 8.13 was below the Flutter minimum of 8.14. The wrapper was updated to 8.14.3 without bypassing validation. APK compilation and API 35 emulator integration are being rerun.
+## Passed
 
-The first UI test attempt tapped before its scroll had settled. The harness was corrected to pump layout after scrolling; the rerun passed. No assertion was removed to hide that failure.
+- Flutter 3.47.8 package resolution and static analysis.
+- All **11 unit/widget tests**: exact Kochi sample/fare, archive/overnight handling, Bengaluru transfer routing in both directions, time formatting, separate API targets and pagination parameters, leading-zero train numbers, error handling, report payload fields, phone navigation/search-to-route/settings, narrow 320-pixel layout with larger text, station selection and recovery after a failed station search.
+- **Android debug APK build**, with the existing live bus/railway publishable endpoints and bundled offline Metro catalogs.
+- **Android API 35 emulator integration flow**, running native Flutter widgets: bus search→route, train search→selected/full route, Metro navigation and settings. Deterministic HTTP fixtures keep this UI flow independent of network outages.
+- Live public API smoke checks separately passed: buses (188 Aluva→Ernakulam matches, time filter, ordered route, overnight handling) and railway (45 Kannur→Thalassery matches, pagination, time filter, full route and denial of raw data reads). No source data was modified.
 
-Local Flutter dependency setup was rejected by automatic approval review when a dependency attempted cloud-metadata access. No metadata access was authorized or retried. Native compilation and execution use isolated GitHub-hosted CI runners without this session's credentials.
+## Deliverable
 
-No physical Android phone is connected to this session. Hardware keyboard, system back, Android font scaling, external Maps launch, APK installation and real-device rendering must be verified on a phone before treating this as a production release. Emulator and widget checks are distinct from physical-device testing.
+`Neram-Android-Test.apk` (debug build, all supported Android ABIs), 157,987,342 bytes.
+SHA-256: `425916ee183128cd9418595f83f231b4ed7a585270f02e7434544dd63db8a003`
 
-The APK is a debug/test build. Store distribution needs release signing and a separate production review. iOS platform source is included; no iOS binary has been compiled or signed here.
+GitHub artifact: https://github.com/albinosiby/neram/actions/runs/40823595674/artifacts/12876011031
+
+## Corrections during validation
+
+The first interaction test tapped before its scroll had settled. The harness now pumps layout after scrolling; all assertions pass. The first native build stopped because Gradle 8.13 was below Flutter's minimum of 8.14. The wrapper was upgraded to 8.14.3 without bypassing validation. A genuine station-picker empty-query/error state was corrected and covered by a new test. Existing web API verification was fixed to parse the bus config independently of the additional rail config.
+
+## Limits
+
+No physical phone is connected to this session. The emulator was not the user's Motorola phone. APK installation, hardware/system Back, external Maps launch, device-specific rendering/font settings and behavior on the user's actual Android version still need a physical-device check. The native emulator HTTP flow uses fixtures; real APIs were checked separately, not by booking tickets or sending test reports.
+
+This is a debug/test APK, not a signed Play Store release. The native interface is English. Appearance and clock-format settings persist locally. iOS platform sources are included, but no iOS binary was compiled or signed here. Android build tools are pinned to supported versions and currently produce future-deprecation warnings; builds pass.
+
+Local Flutter dependency setup was blocked by automatic approval review when a dependency attempted cloud-metadata access. That access was not authorized or retried. Compilation and Android execution were completed in isolated GitHub-hosted runners without this session's credentials.
