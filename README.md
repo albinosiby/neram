@@ -60,3 +60,7 @@ Railway data resides in the separate `neram-railway` Supabase project (`qfxwshqf
 RPCs: `neram_rail_stations(p_query)` (max 20), `neram_rail_search(p_from,p_to,p_after,p_offset)` (max 30, offset bounded to 5,000), and `neram_rail_journey(p_id)` (max 500). Route search matches intermediate stations in the correct stop order. Duration uses supplied journey-day and clock-time differences; negative or implausibly long results display as unavailable.
 
 Checks: `python3 scripts/verify_railway_api.py` runs read-only public API checks for station matching, escaped wildcard search, paging, ordered stops, time filtering, full routes, and denial of raw data reads. Mobile browser checks additionally cover keyboard suggestion selection, swapping transport tabs, selected/full route views and narrow layouts. Existing bus and Metro behavior is retained. The new train interface is English.
+
+## Flutter mobile app
+
+The native Flutter client lives in [`mobile/`](mobile/README.md), organized by shared core, transit, Metro and settings features. The root web app and Render deployment remain separate. See the **Flutter mobile** GitHub Actions workflow for analyzed/tested APK artifacts and `mobile/QA.md` for observed test coverage and device limitations.
