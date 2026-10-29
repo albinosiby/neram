@@ -57,27 +57,31 @@ class _NeramHomeState extends State<NeramHome> {
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
-      title: const Text.rich(
-        TextSpan(
-          children: [
-            TextSpan(
-              text: 'NERAM ',
-              style: TextStyle(
-                letterSpacing: 4,
-                fontWeight: FontWeight.w800,
-                fontSize: 19,
+      title: const FittedBox(
+        fit: BoxFit.scaleDown,
+        alignment: Alignment.centerLeft,
+        child: Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(
+                text: 'NERAM ',
+                style: TextStyle(
+                  letterSpacing: 4,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 19,
+                ),
               ),
-            ),
-            TextSpan(
-              text: 'TRANSIT',
-              style: TextStyle(
-                color: amber,
-                letterSpacing: 3,
-                fontWeight: FontWeight.w800,
-                fontSize: 19,
+              TextSpan(
+                text: 'TRANSIT',
+                style: TextStyle(
+                  color: amber,
+                  letterSpacing: 3,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 19,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       actions: [

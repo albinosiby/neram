@@ -14,26 +14,31 @@ class SettingsScreen extends StatelessWidget {
       const SizedBox(height: 8),
       const Text('Appearance'),
       const SizedBox(height: 12),
-      SegmentedButton<ThemeMode>(
-        segments: const [
-          ButtonSegment(
-            value: ThemeMode.system,
-            icon: Icon(Icons.brightness_auto),
-            label: Text('Auto'),
-          ),
-          ButtonSegment(
-            value: ThemeMode.light,
-            icon: Icon(Icons.light_mode_outlined),
-            label: Text('Light'),
-          ),
-          ButtonSegment(
-            value: ThemeMode.dark,
-            icon: Icon(Icons.dark_mode_outlined),
-            label: Text('Dark'),
-          ),
+      Wrap(
+        spacing: 8,
+        runSpacing: 8,
+        children: [
+          for (final mode in ThemeMode.values)
+            ChoiceChip(
+              avatar: Icon(
+                mode == ThemeMode.system
+                    ? Icons.brightness_auto
+                    : mode == ThemeMode.light
+                    ? Icons.light_mode_outlined
+                    : Icons.dark_mode_outlined,
+                size: 18,
+              ),
+              label: Text(
+                mode == ThemeMode.system
+                    ? 'Auto'
+                    : mode == ThemeMode.light
+                    ? 'Light'
+                    : 'Dark',
+              ),
+              selected: settings.themeMode == mode,
+              onSelected: (_) => settings.setTheme(mode),
+            ),
         ],
-        selected: {settings.themeMode},
-        onSelectionChanged: (s) => settings.setTheme(s.first),
       ),
       const SizedBox(height: 22),
       SwitchListTile(

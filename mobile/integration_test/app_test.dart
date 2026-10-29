@@ -24,9 +24,11 @@ void main() {
       200,
       scrollable: find.byType(Scrollable).first,
     );
+    await tester.pumpAndSettle();
     await tester.tap(find.text('Try Aluva → Ernakulam'));
     await tester.pumpAndSettle();
     await tester.ensureVisible(find.text('06:25 AM'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('06:25 AM'));
     await tester.pumpAndSettle();
     expect(find.text('BOARD HERE'), findsOneWidget);
@@ -39,9 +41,11 @@ void main() {
       200,
       scrollable: find.byType(Scrollable).first,
     );
+    await tester.pumpAndSettle();
     await tester.tap(find.text('Try Kannur → Thalassery'));
     await tester.pumpAndSettle();
     await tester.ensureVisible(find.text('CAN ALLP EXPRESS'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('CAN ALLP EXPRESS'));
     await tester.pumpAndSettle();
     expect(find.text('2 scheduled stops'), findsOneWidget);

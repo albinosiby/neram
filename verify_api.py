@@ -4,7 +4,7 @@ import pathlib
 import urllib.request
 
 root=pathlib.Path(__file__).parent
-config=json.loads((root/'dist/config.js').read_text().split('window.NERAM_CONFIG = ')[1].strip().rstrip(';'))
+config=json.JSONDecoder().raw_decode((root/'dist/config.js').read_text().split('window.NERAM_CONFIG = ')[1].lstrip())[0]
 def rpc(name,body):
     request=urllib.request.Request(config['url']+'/rest/v1/rpc/'+name,data=json.dumps(body).encode(),headers={'apikey':config['publishableKey'],'Content-Type':'application/json'})
     with urllib.request.urlopen(request,timeout=30) as response:

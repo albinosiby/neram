@@ -29,10 +29,12 @@ void main() {
       200,
       scrollable: find.byType(Scrollable).first,
     );
+    await tester.pumpAndSettle();
     await tester.tap(find.text('Try Aluva → Ernakulam'));
     await tester.pumpAndSettle();
     expect(find.text('06:25 AM'), findsOneWidget);
     await tester.ensureVisible(find.text('06:25 AM'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('06:25 AM'));
     await tester.pumpAndSettle();
     expect(find.text('BOARD HERE'), findsOneWidget);
@@ -46,10 +48,12 @@ void main() {
       200,
       scrollable: find.byType(Scrollable).first,
     );
+    await tester.pumpAndSettle();
     await tester.tap(find.text('Try Kannur → Thalassery'));
     await tester.pumpAndSettle();
     expect(find.text('CAN ALLP EXPRESS'), findsOneWidget);
     await tester.ensureVisible(find.text('CAN ALLP EXPRESS'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('CAN ALLP EXPRESS'));
     await tester.pumpAndSettle();
     expect(find.text('2 scheduled stops'), findsOneWidget);
@@ -76,6 +80,8 @@ void main() {
   });
   testWidgets('narrow phone and larger text do not overflow', (tester) async {
     tester.view.physicalSize = const Size(320, 740);
+    tester.platformDispatcher.textScaleFactorTestValue = 1.3;
+    addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
