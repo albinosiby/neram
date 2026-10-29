@@ -15,7 +15,7 @@ Native Flutter UI for buses, railway schedules and Kochi/Bengaluru Metro. This i
 
 ## Run locally
 
-Use Flutter **3.47.8**, JDK 17 and an Android SDK. For the initial checkout, generate the standard platform runners (this preserves existing Dart and Android app sources):
+Use Flutter **3.47.8**, JDK 17 and an Android SDK. Android, iOS and web platform sources are included. The bootstrap command below regenerates any standard runner files missing from a checkout and preserves existing Dart/Android app sources:
 
 ```sh
 cd mobile

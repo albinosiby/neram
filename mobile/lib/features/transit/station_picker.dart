@@ -59,7 +59,11 @@ class _StationPickerState extends State<StationPicker> {
     final q = controller.text.trim();
     final v = ++version;
     if (q.isEmpty && widget.kind == TransitKind.train) {
-      setState(() => items = []);
+      setState(() {
+        items = [];
+        loading = false;
+        error = null;
+      });
       return;
     }
     setState(() {
